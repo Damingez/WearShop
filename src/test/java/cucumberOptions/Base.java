@@ -5,11 +5,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Base {
 
-    public static WebDriver driver;
+    private static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static void init(){
         System.setProperty("webdriver.chrome.driver","./utilities/chromedriver.exe");
         driver = new ChromeDriver();
+    }
+
+    public static WebDriver getDriver(){
         return driver;
     }
 
