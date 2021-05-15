@@ -3,15 +3,12 @@ package stepDefinitions;
 
 import Pages.LoginPage;
 import Pages.MyAccountPage;
-import org.exm.Base;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
+import org.exm.Base;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 @RunWith(Cucumber.class)
 public class LoginSteps extends Base {
@@ -27,8 +24,7 @@ public class LoginSteps extends Base {
     }
 
     @When("^the user is on WearShop login page$")
-    public void the_user_is_on_wearshop_login_page() throws IOException {
-        Base.init();
+    public void the_user_is_on_wearshop_login_page() {
         loginPage = getLoginPage();
         loginPage.goTo();
     }
@@ -48,7 +44,6 @@ public class LoginSteps extends Base {
     public void the_user_fullname_something_is_displayed_in_the_upper_panel(String fullname)   {
         String actualText = loginPage.getLoggedUserFullName();
         Assert.assertEquals(fullname, actualText);
-        getDriver().quit();
     }
 
 }

@@ -21,7 +21,6 @@ public class LoginPage extends Page {
 
     public void goTo() {
         driver.navigate().to( Base.getProperties().getProperty("url"));
-        // driver.navigate().to(prop.getProperty("url"))
     }
 
     public void loginWith(String login, String password) {
