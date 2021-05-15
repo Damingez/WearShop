@@ -1,5 +1,6 @@
 package Pages;
 
+import org.exm.Base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +20,8 @@ public class LoginPage extends Page {
     }
 
     public void goTo() {
-        driver.navigate().to("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+        driver.navigate().to( Base.getProperties().getProperty("url"));
+        // driver.navigate().to(prop.getProperty("url"))
     }
 
     public void loginWith(String login, String password) {

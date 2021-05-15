@@ -3,12 +3,15 @@ package stepDefinitions;
 
 import Pages.LoginPage;
 import Pages.MyAccountPage;
-import cucumberOptions.Base;
+import org.exm.Base;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 @RunWith(Cucumber.class)
 public class LoginSteps extends Base {
@@ -24,7 +27,7 @@ public class LoginSteps extends Base {
     }
 
     @When("^the user is on WearShop login page$")
-    public void the_user_is_on_wearshop_login_page()   {
+    public void the_user_is_on_wearshop_login_page() throws IOException {
         Base.init();
         loginPage = getLoginPage();
         loginPage.goTo();
